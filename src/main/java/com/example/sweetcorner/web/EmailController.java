@@ -26,10 +26,12 @@ public class EmailController {
     }
 
     @PostMapping
-    public void sendEmail(EmailMessage emailMessage) {
+    public String sendEmail(EmailMessage emailMessage) {
         emailMessage.setSubject("Your Sweet Corner order is now complete");
         emailMessage.setMessage("THANK YOU FOR YOUR SWEET CORNER PURCHASE. \n YOUR ORDER HAS BEEN SHIPPED.\n");
         this.emailSenderService.sendEmail(emailMessage.getTo(), emailMessage.getSubject(), emailMessage.getMessage());
+
+        return "redirect:/order-delivery";
     }
 
 }

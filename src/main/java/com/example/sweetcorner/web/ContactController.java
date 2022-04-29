@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/about-us")
-public class AboutUsController {
+@RequestMapping("/contact")
+public class ContactController {
 
     @GetMapping
-    public String getAboutUsPage(Model model) {
-        model.addAttribute("bodyContent", "about-us");
+    public String getContactPage(Model model) {
+        model.addAttribute("bodyContent", "contact");
         return "master-template";
     }
 
