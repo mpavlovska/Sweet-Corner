@@ -81,7 +81,8 @@
         <div class="col mb-3">
             <div class="row">
                 <div class="col-sm-12 col-md-12" sec:authorize="hasRole('ROLE_ADMIN')">
-                    <a href="/products/add-form" class="btn btn-block btn-dark add-product-btn">
+                    <a href="/products/add-form" class="btn btn-block btn-dark add-product-btn"
+                       th:classappend="${#request.isUserInRole('ROLE_ADMIN') == true} ? show : hide">
                         Add new product
                     </a>
                 </div>
